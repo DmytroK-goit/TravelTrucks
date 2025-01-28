@@ -1,9 +1,7 @@
 import { useDispatch } from "react-redux";
-
 import { useEffect } from "react";
 import { getCampers } from "../redux/campers/operations";
-
-import { Header } from "../components/Header";
+import { Header } from "../components/Header/Header";
 import { CampersList } from "../components/CampersList/CampersList";
 
 export const Catalog = () => {
@@ -15,7 +13,6 @@ export const Catalog = () => {
     <div>
       <Header />
       <CampersList />
-      <p>CATALOG</p>
     </div>
   );
 };
