@@ -1,5 +1,5 @@
-import { Header } from "../components/Header.jsx";
-import { MainInfo } from "../components/MainInfo.jsx";
+import { Header } from "../components/Header";
+import { MainInfo } from "../components/MainInfo";
 
 export const HomePage = () => {
   return (
