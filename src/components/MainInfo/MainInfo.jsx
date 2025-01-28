@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import s from "../components/MainInfo.module.css";
+import s from "../../components/MainInfo/MainInfo.module.css";
 export const MainInfo = () => {
   return (
     <div className={s.hero}>

@@ -1,5 +1,5 @@
 import { Header } from "../components/Header/Header";
-import { MainInfo } from "../components/MainInfo";
+import { MainInfo } from "../components/MainInfo/MainInfo";
 
 export const HomePage = () => {
   return (
