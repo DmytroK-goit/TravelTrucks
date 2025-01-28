@@ -1,0 +1,18 @@
+.list_photo {
+  display: flex;
+  gap: 48px;
+}
+.list_photo li {
+  list-style: none;
+}
+.img {
+  border-radius: 10px;
+  width: 292px;
+  height: 312px;
+  display: block;
+}
+.img img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

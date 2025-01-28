@@ -14,5 +14,11 @@ const persistedCampersReducer = persistReducer(
 );
 export const store = configureStore({
   reducer: { campers: persistedCampersReducer },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["REGISTER"],
+      },
+    }),
 });
 export const persistor = persistStore(store);
