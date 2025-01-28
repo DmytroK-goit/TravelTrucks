@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getCampersId } from "../redux/campers/operations";
-import { campersSelectors } from "../redux/campers/selectors";
+import { campersSelectors } from "../redux/Camper/selectors";
 import s from "./CatalogId.module.css";
+import { getCampersId } from "../redux/Camper/operations";
+
 export const CatalogId = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
