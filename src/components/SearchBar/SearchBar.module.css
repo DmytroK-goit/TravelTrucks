@@ -3,6 +3,7 @@
   flex-direction: column;
   margin-top: 48px;
   margin-left: 64px;
+  max-width: 360px;
 }
 .filter_location {
   display: flex;
@@ -27,21 +28,74 @@
 .vehicleTypeButtons,
 .equipmentButtons {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .vehicleTypeButtons button,
 .equipmentButtons button,
 .transmission button {
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #fff;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  padding: 16px 18px;
+  width: 112px;
+  height: 96px;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #101828;
 }
 
 .vehicleTypeButtons button.active,
 .equipmentButtons button.selected,
 .transmission button.selected {
-  background-color: #4caf50; /* зелений колір для активної кнопки */
-  color: white;
+  border: 1px solid #e44848;
+}
+
+.filter_title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+  margin-bottom: 32px;
+}
+.filterSection {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+}
+.filterSection label {
+  display: block;
+  margin-bottom: 48px;
+  margin-top: 32px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 200px;
+  width: 173px;
+  height: 56px;
+  background-color: #e44848;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.button:hover:focus {
+  background-color: #d84343;
+  color: #fff;
+  transform: scale(1.1);
 }

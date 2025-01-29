@@ -16,8 +16,12 @@ export const SearchBar = ({ onFilterChange }) => {
     setEquipment({ ...equipment, [name]: !equipment[name] });
   };
 
-  const handleTransmissionChange = (type) => {
-    setEquipment({ ...equipment, transmission: type });
+  const handleTransmissionChange = () => {
+    setEquipment({
+      ...equipment,
+      transmission:
+        equipment.transmission === "automatic" ? "manual" : "automatic",
+    });
   };
 
   const handleSubmit = (e) => {
@@ -28,6 +32,8 @@ export const SearchBar = ({ onFilterChange }) => {
   const handleVehicleTypeClick = (type) => {
     setVehicleType(type);
   };
+
+  const equipmentOptions = ["AC", "kitchen", "TV", "bathroom", "transmission"];
 
   return (
     <form className={s.searchBar} onSubmit={handleSubmit}>
@@ -42,11 +48,42 @@ export const SearchBar = ({ onFilterChange }) => {
       </div>
 
       <div className={s.filter_vahicle}>
-        <p>Filters</p>
+        <p className={s.filter_title}>Filters</p>
+
+        <div className={s.filterSection}>
+          <label>Vehicle equipment</label>
+          <div className={s.equipmentButtons}>
+            {equipmentOptions.map((equip) => (
+              <button
+                key={equip}
+                type="button"
+                className={
+                  equipment[equip] ||
+                  (equip === "transmission" &&
+                    equipment.transmission === "automatic")
+                    ? s.selected
+                    : ""
+                }
+                onClick={() =>
+                  equip === "transmission"
+                    ? handleTransmissionChange()
+                    : handleEquipmentChange(equip)
+                }
+              >
+                {equip === "transmission"
+                  ? equipment.transmission === "automatic"
+                    ? "automatic"
+                    : "manual"
+                  : equip}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className={s.filterSection}>
           <label>Vehicle type</label>
           <div className={s.vehicleTypeButtons}>
-            {["van", "fully_integrated", "alcove"].map((type) => (
+            {["panelTruck", "fullyIntegrated", "alcove"].map((type) => (
               <button
                 key={type}
                 className={vehicleType === type ? s.active : ""}
@@ -58,44 +95,9 @@ export const SearchBar = ({ onFilterChange }) => {
           </div>
         </div>
       </div>
-
-      <div className={s.filterSection}>
-        <label>Vehicle equipment</label>
-        <div className={s.equipmentButtons}>
-          {["AC", "kitchen", "TV", "bathroom"].map((equip) => (
-            <button
-              key={equip}
-              type="button"
-              className={equipment[equip] ? s.selected : ""}
-              onClick={() => handleEquipmentChange(equip)}
-            >
-              {equip}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className={s.filterSection}>
-        <label>Transmission</label>
-        <div className={s.transmission}>
-          <button
-            type="button"
-            onClick={() => handleTransmissionChange("automatic")}
-            className={equipment.transmission === "automatic" ? s.selected : ""}
-          >
-            Auto
-          </button>
-          <button
-            type="button"
-            onClick={() => handleTransmissionChange("manual")}
-            className={equipment.transmission === "manual" ? s.selected : ""}
-          >
-            Manual
-          </button>
-        </div>
-      </div>
-
-      <button type="submit">Search</button>
+      <button className={s.button} type="submit">
+        Search
+      </button>
     </form>
   );
 };

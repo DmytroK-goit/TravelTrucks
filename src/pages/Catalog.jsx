@@ -18,7 +18,7 @@ export const Catalog = () => {
 
   const [filters, setFilters] = useState({
     location: "",
-    form: "",
+    vehicleType: "",
     equipment: {
       AC: false,
       automatic: false,
@@ -34,8 +34,7 @@ export const Catalog = () => {
         camper.location
           .toLowerCase()
           .includes(filters.location.toLowerCase())) &&
-      (!filters.form ||
-        camper.form.toLowerCase().includes(filters.form.toLowerCase())) &&
+      (!filters.vehicleType || camper.form === filters.vehicleType) &&
       (!filters.equipment.AC || camper.AC) &&
       (!filters.equipment.automatic || camper.transmission === "Automatic") &&
       (!filters.equipment.kitchen || camper.kitchen) &&
@@ -45,6 +44,7 @@ export const Catalog = () => {
   };
 
   const filteredCampers = allCampers.filter(filterCampers);
+  console.log(filteredCampers);
 
   return (
     <div>
