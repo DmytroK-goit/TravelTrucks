@@ -1,0 +1,47 @@
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+  margin-left: 64px;
+}
+.filter_location {
+  display: flex;
+  flex-direction: column;
+}
+.filter_location label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+}
+.filter_location input {
+  border-radius: 12px;
+  padding: 18px 218px 18px 20px;
+  width: 360px;
+  height: 56px;
+  background-color: #f7f7f7;
+}
+.filter_vahicle {
+  margin-top: 40px;
+}
+.vehicleTypeButtons,
+.equipmentButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.vehicleTypeButtons button,
+.equipmentButtons button,
+.transmission button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.vehicleTypeButtons button.active,
+.equipmentButtons button.selected,
+.transmission button.selected {
+  background-color: #4caf50; /* зелений колір для активної кнопки */
+  color: white;
+}
