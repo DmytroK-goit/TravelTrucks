@@ -1,3 +1,6 @@
+.catalog_id {
+  width: 1312px;
+}
 .list_photo {
   display: flex;
   gap: 48px;
@@ -5,14 +8,23 @@
 .list_photo li {
   list-style: none;
 }
-.img {
-  border-radius: 10px;
-  width: 292px;
-  height: 312px;
-  display: block;
-}
+
 .img img {
   display: block;
-  height: 100%;
-  width: 100%;
+  height: 312px;
+  width: 292px;
+  border-radius: 10px;
+}
+.tabs button {
+  border: none;
+  background-color: inherit;
+}
+.tabs button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: red;
+  font-weight: 700;
+}
+.catalog_cont {
+  padding: 48px 64px 80px 64px;
 }
