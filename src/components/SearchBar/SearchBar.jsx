@@ -123,8 +123,8 @@ export const SearchBar = ({ onFilterChange }) => {
                     <use href="sprite.svg#icon-diagram"></use>
                   </svg>{" "}
                   {equipment.transmission === "automatic"
-                    ? "Automatic"
-                    : "Manual"}
+                    ? "automatic"
+                    : "manual"}
                 </button>
               </li>
             </ul>

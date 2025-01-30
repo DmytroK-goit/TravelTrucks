@@ -36,7 +36,8 @@ export const Catalog = () => {
           .includes(filters.location.toLowerCase())) &&
       (!filters.vehicleType || camper.form === filters.vehicleType) &&
       (!filters.equipment.AC || camper.AC) &&
-      (!filters.equipment.automatic || camper.transmission === "Automatic") &&
+      (!filters.equipment.transmission ||
+        camper.transmission.toLowerCase() === filters.equipment.transmission) &&
       (!filters.equipment.kitchen || camper.kitchen) &&
       (!filters.equipment.TV || camper.TV) &&
       (!filters.equipment.bathroom || camper.bathroom)
