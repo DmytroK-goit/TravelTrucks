@@ -33,18 +33,21 @@ export const SearchBar = ({ onFilterChange }) => {
     setVehicleType(type);
   };
 
-  const equipmentOptions = ["AC", "kitchen", "TV", "bathroom", "transmission"];
-
   return (
     <form className={s.searchBar} onSubmit={handleSubmit}>
       <div className={s.filter_location}>
         <label>Location</label>
-        <input
-          type="text"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          placeholder="Enter Location"
-        />
+        <div className={s.inputWrapper}>
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="Enter Location"
+          />
+          <svg className={s.icon_input}>
+            <use href="sprite.svg#icon-wind"></use>
+          </svg>
+        </div>
       </div>
 
       <div className={s.filter_vahicle}>
@@ -53,45 +56,114 @@ export const SearchBar = ({ onFilterChange }) => {
         <div className={s.filterSection}>
           <label>Vehicle equipment</label>
           <div className={s.equipmentButtons}>
-            {equipmentOptions.map((equip) => (
-              <button
-                key={equip}
-                type="button"
-                className={
-                  equipment[equip] ||
-                  (equip === "transmission" &&
-                    equipment.transmission === "automatic")
-                    ? s.selected
-                    : ""
-                }
-                onClick={() =>
-                  equip === "transmission"
-                    ? handleTransmissionChange()
-                    : handleEquipmentChange(equip)
-                }
-              >
-                {equip === "transmission"
-                  ? equipment.transmission === "automatic"
-                    ? "automatic"
-                    : "manual"
-                  : equip}
-              </button>
-            ))}
+            <ul className={s.ul}>
+              <li>
+                {" "}
+                <button
+                  type="button"
+                  className={equipment.AC ? s.selected : ""}
+                  onClick={() => handleEquipmentChange("AC")}
+                >
+                  {" "}
+                  <svg className={s.icon}>
+                    <use href="sprite.svg#icon-wind"></use>
+                  </svg>
+                  AC
+                </button>
+              </li>
+              <li>
+                {" "}
+                <button
+                  type="button"
+                  className={equipment.kitchen ? s.selected : ""}
+                  onClick={() => handleEquipmentChange("kitchen")}
+                >
+                  <svg className={s.icon}>
+                    <use href="sprite.svg#icon-cup-hot"></use>
+                  </svg>
+                  Kitchen
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={equipment.TV ? s.selected : ""}
+                  onClick={() => handleEquipmentChange("TV")}
+                >
+                  {" "}
+                  <svg className={s.icon}>
+                    <use href="sprite.svg#icon-tv"></use>
+                  </svg>
+                  TV
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={equipment.bathroom ? s.selected : ""}
+                  onClick={() => handleEquipmentChange("bathroom")}
+                >
+                  {" "}
+                  <svg className={s.icon}>
+                    <use href="symbol-defs.svg#icon-ph_shower"></use>
+                  </svg>
+                  Bathroom
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  className={
+                    equipment.transmission === "automatic" ? s.selected : ""
+                  }
+                  onClick={handleTransmissionChange}
+                >
+                  {" "}
+                  <svg className={s.icon}>
+                    <use href="sprite.svg#icon-diagram"></use>
+                  </svg>{" "}
+                  {equipment.transmission === "automatic"
+                    ? "Automatic"
+                    : "Manual"}
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
 
         <div className={s.filterSection}>
           <label>Vehicle type</label>
           <div className={s.vehicleTypeButtons}>
-            {["panelTruck", "fullyIntegrated", "alcove"].map((type) => (
-              <button
-                key={type}
-                className={vehicleType === type ? s.active : ""}
-                onClick={() => handleVehicleTypeClick(type)}
-              >
-                {type.replace("_", " ").toUpperCase()}
-              </button>
-            ))}
+            <button
+              className={vehicleType === "panelTruck" ? s.active : ""}
+              onClick={() => handleVehicleTypeClick("panelTruck")}
+            >
+              {" "}
+              <svg className={s.icon}>
+                <use href="sprite.svg#icon-bi_grid-1x2"></use>
+              </svg>{" "}
+              Van
+            </button>
+            <button
+              className={vehicleType === "fullyIntegrated" ? s.active : ""}
+              onClick={() => handleVehicleTypeClick("fullyIntegrated")}
+            >
+              {" "}
+              <svg className={s.icon}>
+                <use href="sprite.svg#icon-bi_grid"></use>
+              </svg>{" "}
+              Fully Integrated
+            </button>
+            <button
+              className={vehicleType === "alcove" ? s.active : ""}
+              onClick={() => handleVehicleTypeClick("alcove")}
+            >
+              {" "}
+              <svg width="32" height="32" className={s.icon}>
+                <use href="sprite.svg#icon-bi_grid-3x3-gap"></use>
+              </svg>{" "}
+              Alcove
+            </button>
           </div>
         </div>
       </div>

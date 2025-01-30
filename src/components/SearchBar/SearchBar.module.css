@@ -22,6 +22,30 @@
   height: 56px;
   background-color: #f7f7f7;
 }
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputWrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.icon_input {
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  fill: #101828;
+  pointer-events: none;
+}
+
 .filter_vahicle {
   margin-top: 40px;
 }
@@ -47,6 +71,11 @@
   letter-spacing: -0.01em;
   text-align: center;
   color: #101828;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
 
 .vehicleTypeButtons button.active,
@@ -78,6 +107,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   border-radius: 200px;
   width: 173px;
   height: 56px;
@@ -98,4 +128,33 @@
   background-color: #d84343;
   color: #fff;
   transform: scale(1.1);
+}
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+  margin-top: 24px;
+  padding-left: 0px;
+}
+.ul li {
+  list-style: none;
+}
+.ul_li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 18px;
+  width: 143px;
+  height: 48px;
+  background-color: #f2f4f7;
+  text-align: center;
+  color: #101828;
+}
+.icon {
+  fill: #101828;
+  width: 32px;
+  height: 32px;
 }

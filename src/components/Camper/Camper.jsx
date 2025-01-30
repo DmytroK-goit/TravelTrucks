@@ -41,6 +41,39 @@ export const Camper = ({ camper }) => {
         </div>
 
         <p className={s.description}>{description}</p>
+        <ul className={s.ul}>
+          <li className={s.ul_li}>
+            {" "}
+            <svg className={s.icon}>
+              <use href="symbol-defs.svg#icon-fuel-pump"></use>
+            </svg>{" "}
+            {engine}
+          </li>
+          <li className={s.ul_li}>
+            {" "}
+            <svg className={s.icon}>
+              <use href="sprite.svg#icon-diagram"></use>
+            </svg>{" "}
+            {transmission}
+          </li>
+          {kitchen && (
+            <li className={s.ul_li}>
+              {" "}
+              <svg className={s.icon}>
+                <use href="sprite.svg#icon-cup-hot"></use>
+              </svg>{" "}
+              Kitchen
+            </li>
+          )}
+          {AC && (
+            <li className={s.ul_li}>
+              <svg className={s.icon}>
+                <use href="sprite.svg#icon-wind"></use>
+              </svg>{" "}
+              AC
+            </li>
+          )}
+        </ul>
         <Link className={s.button} to={`/campers/${id}`} id={id}>
           Show More
         </Link>
