@@ -9,8 +9,8 @@ function App() {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/campers" index element={<Catalog />} />
-        <Route path="/campers/:id" index element={<CatalogId />} />
+        <Route path="/campers" element={<Catalog />} />
+        <Route path="/campers/:id" element={<CatalogId />} />
       </Route>
 
       {/* <Route path="*" element={<NotFound />} /> */}

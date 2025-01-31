@@ -11,7 +11,7 @@ import { Features } from "../components/Features/Features";
 export const CatalogId = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const [activeTab, setActiveTab] = useState("features"); // Стан для контролю, який компонент відображати
+  const [activeTab, setActiveTab] = useState("features");
 
   useEffect(() => {
     dispatch(getCampersId(id));
