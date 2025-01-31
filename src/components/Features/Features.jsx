@@ -1,4 +1,4 @@
-import { Form } from "../Form/Form";
+import { SendForm } from "../Form/SendForm";
 import s from "./Features.module.css";
 
 export const Features = ({ item }) => {
@@ -120,7 +120,7 @@ export const Features = ({ item }) => {
           </ul>
         </div>
       </div>
-      <Form />
+      <SendForm />
     </div>
   );
 };
