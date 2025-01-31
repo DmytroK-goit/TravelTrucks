@@ -12,8 +12,6 @@ function App() {
         <Route path="/campers" element={<Catalog />} />
         <Route path="/campers/:id" element={<CatalogId />} />
       </Route>
-
-      {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );
 }
