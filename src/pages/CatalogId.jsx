@@ -6,7 +6,7 @@ import s from "../pages/CatalogId.module.css";
 import { Header } from "../components/Header/Header";
 import { Reviews } from "../components/Reviews/Reviews";
 import { Features } from "../components/Features/Features";
-import { getCampersId } from "../redux/Camper/operations";
+import { getCampersId } from "../../src/redux/Camper/operations";
 
 export const CatalogId = () => {
   const dispatch = useDispatch();
