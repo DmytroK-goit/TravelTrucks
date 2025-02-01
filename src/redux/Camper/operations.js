@@ -11,9 +11,12 @@ export const getCampers = createAsyncThunk(
   async (filters, thunkApi) => {
     try {
       const response = await campers.get("/campers", { params: filters });
+      toast.success("GOOD");
       return response.data;
     } catch (error) {
-      toast.error(error.message);
+      if (error.response && error.response.status === 404) {
+        toast.error("Email is already in use. Please try another one.");
+      }
       return thunkApi.rejectWithValue(error.message);
     }
   }

@@ -3,8 +3,19 @@ import { HomePage } from "./pages/HomePage";
 import SharedLayout from "./components/SharedLayout";
 import { Catalog } from "./pages/Catalog";
 import { CatalogId } from "./pages/CatalogId";
+import { getCampers } from "./redux/Camper/operations";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
+  const dispatch = useDispatch();
+  const handleFilterChange = () => {
+    dispatch(getCampers());
+  };
+
+  useEffect(() => {
+    handleFilterChange();
+  }, []);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

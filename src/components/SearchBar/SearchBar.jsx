@@ -5,7 +5,7 @@ export const SearchBar = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
   const [form, setForm] = useState("");
   const [equipment, setEquipment] = useState({
-    AC: false,
+    AC: true,
     transmission: "automatic",
     kitchen: false,
     TV: false,
@@ -24,13 +24,31 @@ export const SearchBar = ({ onFilterChange }) => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onFilterChange({ location, form, equipment });
-  };
-
   const handleVehicleTypeClick = (type) => {
     setForm(type);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const filters = {
+      location: location || undefined,
+      form: form || undefined,
+      AC: equipment.AC || undefined,
+      transmission:
+        equipment.transmission !== "automatic"
+          ? equipment.transmission
+          : undefined,
+      kitchen: equipment.kitchen || undefined,
+      TV: equipment.TV || undefined,
+      bathroom: equipment.bathroom || undefined,
+    };
+
+    const filteredParams = Object.fromEntries(
+      Object.entries(filters).filter(([_, value]) => value !== undefined)
+    );
+
+    onFilterChange(filteredParams);
   };
 
   return (
