@@ -17,6 +17,10 @@ export const CatalogId = () => {
   }, [dispatch, id]);
   const [activeTab, setActiveTab] = useState("features");
   const item = useSelector(campersSelectors.selectCamperId);
+  if (!item) {
+    return <p>Loading...</p>;
+  }
+
   const {
     name,
     price,
