@@ -7,6 +7,7 @@ import { Header } from "../components/Header/Header";
 import { Reviews } from "../components/Reviews/Reviews";
 import { Features } from "../components/Features/Features";
 import { getCampersId } from "../../src/redux/Camper/operations";
+import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 
 export const CatalogId = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export const CatalogId = () => {
   const [activeTab, setActiveTab] = useState("features");
   const item = useSelector(campersSelectors.selectCamperId);
   if (!item) {
-    return <p>Loading...</p>;
+    return <LoaderComponent />;
   }
 
   const {
