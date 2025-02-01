@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import SharedLayout from "./components/SharedLayout";
 import { Catalog } from "./pages/Catalog";
-import { CatalogId } from "./pages/CatalogId";
+import { CatalogId } from "../src/pages/CatalogId";
 import { getCampers } from "./redux/Camper/operations";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
