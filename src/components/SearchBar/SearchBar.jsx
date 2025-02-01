@@ -3,10 +3,10 @@ import s from "./SearchBar.module.css";
 
 export const SearchBar = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
-  const [vehicleType, setVehicleType] = useState("");
+  const [form, setForm] = useState("");
   const [equipment, setEquipment] = useState({
     AC: false,
-    transmission: "",
+    transmission: "automatic",
     kitchen: false,
     TV: false,
     bathroom: false,
@@ -26,11 +26,11 @@ export const SearchBar = ({ onFilterChange }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onFilterChange({ location, vehicleType, equipment });
+    onFilterChange({ location, form, equipment });
   };
 
   const handleVehicleTypeClick = (type) => {
-    setVehicleType(type);
+    setForm(type);
   };
 
   return (
@@ -45,7 +45,7 @@ export const SearchBar = ({ onFilterChange }) => {
             placeholder="Enter Location"
           />
           <svg className={s.icon_input}>
-            <use href="sprite.svg#icon-wind"></use>
+            <use href="sprite.svg#icon-Map"></use>
           </svg>
         </div>
       </div>
@@ -135,7 +135,7 @@ export const SearchBar = ({ onFilterChange }) => {
           <label>Vehicle type</label>
           <div className={s.vehicleTypeButtons}>
             <button
-              className={vehicleType === "panelTruck" ? s.active : ""}
+              className={form === "panelTruck" ? s.active : ""}
               onClick={() => handleVehicleTypeClick("panelTruck")}
             >
               {" "}
@@ -145,7 +145,7 @@ export const SearchBar = ({ onFilterChange }) => {
               Van
             </button>
             <button
-              className={vehicleType === "fullyIntegrated" ? s.active : ""}
+              className={form === "fullyIntegrated" ? s.active : ""}
               onClick={() => handleVehicleTypeClick("fullyIntegrated")}
             >
               {" "}
@@ -155,7 +155,7 @@ export const SearchBar = ({ onFilterChange }) => {
               Fully Integrated
             </button>
             <button
-              className={vehicleType === "alcove" ? s.active : ""}
+              className={form === "alcove" ? s.active : ""}
               onClick={() => handleVehicleTypeClick("alcove")}
             >
               {" "}

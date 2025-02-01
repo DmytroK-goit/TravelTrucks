@@ -37,14 +37,14 @@ export const Features = ({ item }) => {
           <li className={s.ul_li}>
             {" "}
             <svg className={s.icon}>
-              <use href="symbol-defs.svg#icon-fuel-pump"></use>
+              <use href="../../../public/sprite.svg#icon-fuel-pump"></use>
             </svg>{" "}
             {engine}
           </li>
           <li className={s.ul_li}>
             {" "}
             <svg className={s.icon}>
-              <use href="sprite.svg#icon-diagram"></use>
+              <use href="../../../public/sprite.svg#icon-diagram"></use>
             </svg>{" "}
             {transmission}
           </li>
@@ -52,7 +52,7 @@ export const Features = ({ item }) => {
             <li className={s.ul_li}>
               {" "}
               <svg className={s.icon}>
-                <use href="sprite.svg#icon-cup-hot"></use>
+                <use href="../../../public/sprite.svg#icon-cup-hot"></use>
               </svg>{" "}
               Kitchen
             </li>
@@ -60,7 +60,7 @@ export const Features = ({ item }) => {
           {AC && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="sprite.svg#icon-wind"></use>
+                <use href="../../../public/sprite.svg#icon-wind"></use>
               </svg>{" "}
               AC
             </li>
@@ -68,15 +68,16 @@ export const Features = ({ item }) => {
           {bathroom && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="sprite.svg#icon-wind"></use>
+                <use href="../../../public/sprite.svg#icon-ph_shower"></use>
               </svg>{" "}
               Bathroom
             </li>
           )}
           {TV && (
             <li className={s.ul_li}>
+              {" "}
               <svg className={s.icon}>
-                <use href="sprite.svg#icon-wind"></use>
+                <use href="../../../public/sprite.svg#icon-tv"></use>
               </svg>{" "}
               TV
             </li>
@@ -84,7 +85,7 @@ export const Features = ({ item }) => {
           {water && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="sprite.svg#icon-wind"></use>
+                <use href="../../../public/sprite.svg#icon-wind"></use>
               </svg>{" "}
               water
             </li>

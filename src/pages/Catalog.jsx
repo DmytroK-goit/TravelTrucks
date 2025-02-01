@@ -9,50 +9,47 @@ import { campersSelectors } from "../redux/Camper/selectors";
 
 export const Catalog = () => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCampers());
-  }, [dispatch]);
-
+  const handleFilterChange = (filters) => {
+    dispatch(getCampers(filters));
+  };
   const allCampers = useSelector(campersSelectors.selectCampers);
 
-  const [filters, setFilters] = useState({
-    location: "",
-    vehicleType: "",
-    equipment: {
-      AC: false,
-      automatic: false,
-      kitchen: false,
-      TV: false,
-      bathroom: false,
-    },
-  });
+  // const [filters, setFilters] = useState({
+  //   location: "",
+  //   vehicleType: "",
+  //   equipment: {
+  //     AC: false,
+  //     automatic: false,
+  //     kitchen: false,
+  //     TV: false,
+  //     bathroom: false,
+  //   },
+  // });
 
-  const filterCampers = (camper) => {
-    return (
-      (!filters.location ||
-        camper.location
-          .toLowerCase()
-          .includes(filters.location.toLowerCase())) &&
-      (!filters.vehicleType || camper.form === filters.vehicleType) &&
-      (!filters.equipment.AC || camper.AC) &&
-      (!filters.equipment.transmission ||
-        camper.transmission.toLowerCase() === filters.equipment.transmission) &&
-      (!filters.equipment.kitchen || camper.kitchen) &&
-      (!filters.equipment.TV || camper.TV) &&
-      (!filters.equipment.bathroom || camper.bathroom)
-    );
-  };
+  // const filterCampers = (camper) => {
+  //   return (
+  //     (!filters.location ||
+  //       camper.location
+  //         .toLowerCase()
+  //         .includes(filters.location.toLowerCase())) &&
+  //     (!filters.vehicleType || camper.form === filters.vehicleType) &&
+  //     (!filters.equipment.AC || camper.AC) &&
+  //     (!filters.equipment.transmission ||
+  //       camper.transmission.toLowerCase() === filters.equipment.transmission) &&
+  //     (!filters.equipment.kitchen || camper.kitchen) &&
+  //     (!filters.equipment.TV || camper.TV) &&
+  //     (!filters.equipment.bathroom || camper.bathroom)
+  //   );
+  // };
 
-  const filteredCampers = allCampers.filter(filterCampers);
-  console.log(filteredCampers);
+  // const filteredCampers = allCampers;
 
   return (
     <div>
       <Header />
       <div className={s.container_Catalog}>
-        <SearchBar onFilterChange={setFilters} />
-        <CampersList items={filteredCampers} />
+        <SearchBar onFilterChange={handleFilterChange} />
+        <CampersList items={allCampers} />
       </div>
     </div>
   );
