@@ -31,12 +31,23 @@ export const Camper = ({ camper }) => {
       <div className={s.info}>
         <div className={s.fist_string}>
           <p className={s.name}>{name}</p>
-          <p className={s.price}>€{price}.00</p>
+          <div className={s.price_hart}>
+            <p className={s.price}>€{price}.00</p>
+            <svg className={s.icon_input}>
+              <use href="../../../public/sprite.svg#icon-hart"></use>
+            </svg>
+          </div>
         </div>
         <div className={s.second_string}>
+          <svg className={s.icon_input}>
+            <use href="../../../public/sprite.svg#icon-star"></use>
+          </svg>
           <p className={s.rating}>
             {rating} ({reviews.length} Reviews)
           </p>
+          <svg className={s.icon_input}>
+            <use href="../../../public/#icon-Map"></use>
+          </svg>
           <p className={s.location}>{location}</p>
         </div>
 

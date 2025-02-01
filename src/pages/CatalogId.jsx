@@ -52,9 +52,18 @@ export const CatalogId = () => {
       <div className={s.catalog_cont}>
         <div className={s.catalog_id}>
           <h2>{name}</h2>
-          <p>
-            {rating} {reviews.length} Reviews {location}
-          </p>
+          <div className={s.second_string}>
+            <svg className={s.icon_input}>
+              <use href="../../../public/sprite.svg#icon-star"></use>
+            </svg>
+            <p className={s.rating}>
+              {rating} ({reviews.length} Reviews)
+            </p>
+            <svg className={s.icon_input}>
+              <use href="sprite.svg#icon-Map"></use>
+            </svg>
+            <p className={s.location}>{location}</p>
+          </div>
           <p>€{price}.00</p>
           <ul className={s.list_photo}>
             {gallery.map((photo, index) => (

@@ -45,6 +45,7 @@
   display: flex;
   gap: 16px;
   justify-content: start;
+  align-items: center;
 }
 .rating {
   font-weight: 400;
@@ -119,4 +120,18 @@
   fill: #101828;
   width: 20px;
   height: 20px;
+}
+.icon_input {
+  width: 16px;
+  height: 16px;
+  fill: #101828;
+}
+.price_hart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.price_hart svg {
+  width: 24px;
+  height: 25px;
 }

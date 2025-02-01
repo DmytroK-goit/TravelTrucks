@@ -37,7 +37,7 @@ export const Features = ({ item }) => {
           <li className={s.ul_li}>
             {" "}
             <svg className={s.icon}>
-              <use href="sprite.svg#icon-fuel-pump"></use>
+              <use href="../../../public/sprite.svg#icon-fuel-pump"></use>
             </svg>{" "}
             {engine}
           </li>
@@ -85,12 +85,37 @@ export const Features = ({ item }) => {
           {water && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="../../../public/sprite.svg#icon-wind"></use>
+                <use href="../../../public/sprite.svg#icon-ion_water-outline"></use>
               </svg>{" "}
-              water
+              Water
+            </li>
+          )}
+          {refrigerator && (
+            <li className={s.ul_li}>
+              <svg className={s.icon}>
+                <use href="../../../public/sprite.svg#icon-solar_fridge-outline"></use>
+              </svg>{" "}
+              Refrigerator
+            </li>
+          )}
+          {microwave && (
+            <li className={s.ul_li}>
+              <svg className={s.icon}>
+                <use href="../../../public/sprite.svg#icon-lucide_microwave"></use>
+              </svg>{" "}
+              Microwave
+            </li>
+          )}
+          {gas && (
+            <li className={s.ul_li}>
+              <svg className={s.icon}>
+                <use href="../../../public/sprite.svg#icon-lucide_microwave"></use>
+              </svg>{" "}
+              Gas
             </li>
           )}
         </ul>
+
         <div className={s.vahicle_det}>
           <p>Vehicle details</p>
           <ul>
