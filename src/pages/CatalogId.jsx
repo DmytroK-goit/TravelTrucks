@@ -3,20 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { campersSelectors } from "../redux/Camper/selectors";
 import s from "../pages/CatalogId.module.css";
-import { getCampersId } from "../redux/Camper/operations";
 import { Header } from "../components/Header/Header";
 import { Reviews } from "../components/Reviews/Reviews";
 import { Features } from "../components/Features/Features";
+import { getCampersId } from "../redux/Camper/operations";
 
 export const CatalogId = () => {
-  const { id } = useParams();
   const dispatch = useDispatch();
-  const [activeTab, setActiveTab] = useState("features");
-
+  const { id } = useParams();
+  console.log(id);
   useEffect(() => {
     dispatch(getCampersId(id));
   }, [dispatch, id]);
-
+  const [activeTab, setActiveTab] = useState("features");
   const item = useSelector(campersSelectors.selectCamperId);
   const {
     name,
