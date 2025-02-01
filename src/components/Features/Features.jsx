@@ -37,7 +37,7 @@ export const Features = ({ item }) => {
           <li className={s.ul_li}>
             {" "}
             <svg className={s.icon}>
-              <use href="../../../public/sprite.svg#icon-fuel-pump"></use>
+              <use href="sprite.svg#icon-fuel-pump"></use>
             </svg>{" "}
             {engine}
           </li>
