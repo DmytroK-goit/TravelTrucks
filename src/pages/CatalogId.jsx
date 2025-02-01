@@ -60,7 +60,7 @@ export const CatalogId = () => {
               {rating} ({reviews.length} Reviews)
             </p>
             <svg className={s.icon_input}>
-              <use href="sprite.svg#icon-Map"></use>
+              <use href="../../../public/sprite.svg#icon-Map"></use>
             </svg>
             <p className={s.location}>{location}</p>
           </div>
