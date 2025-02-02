@@ -1,7 +1,6 @@
 .form_cont {
   border: 1px solid #dadde1;
   border-radius: 10px;
-
   width: 641px;
   height: 588px;
 }
@@ -67,4 +66,11 @@
 .input.textarea {
   height: 118px;
   resize: none;
+}
+.error {
+  color: #d84343;
+  font-size: 10px;
+}
+.react-datepicker-wrapper {
+  width: 100%;
 }
