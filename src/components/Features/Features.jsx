@@ -1,4 +1,3 @@
-import { SendForm } from "../Form/SendForm";
 import s from "./Features.module.css";
 import sprite from "../../img/sprite.svg";
 
@@ -38,14 +37,14 @@ export const Features = ({ item }) => {
           <li className={s.ul_li}>
             {" "}
             <svg className={s.icon}>
-              <use href="/public/sprite.svg#icon-fuel-pump"></use>
+              <use href={`${sprite}#icon-fuel-pump`}></use>
             </svg>{" "}
             {engine}
           </li>
           <li className={s.ul_li}>
             {" "}
             <svg className={s.icon}>
-              <use href="/public/sprite.svg#icon-diagram"></use>
+              <use href={`${sprite}#icon-diagram`}></use>
             </svg>{" "}
             {transmission}
           </li>
@@ -61,7 +60,7 @@ export const Features = ({ item }) => {
           {AC && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-wind"></use>
+                <use href={`${sprite}#icon-wind`}></use>
               </svg>{" "}
               AC
             </li>
@@ -69,7 +68,7 @@ export const Features = ({ item }) => {
           {bathroom && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-ph_shower"></use>
+                <use href={`${sprite}#icon-ph_shower`}></use>
               </svg>{" "}
               Bathroom
             </li>
@@ -78,7 +77,7 @@ export const Features = ({ item }) => {
             <li className={s.ul_li}>
               {" "}
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-tv"></use>
+                <use href={`${sprite}#icon-tv`}></use>
               </svg>{" "}
               TV
             </li>
@@ -110,7 +109,7 @@ export const Features = ({ item }) => {
           {gas && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-gas-stove"></use>
+                <use href={`${sprite}#icon-gas-stove`}></use>
               </svg>{" "}
               Gas
             </li>
