@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import s from "./Camper.module.css";
+import { useState } from "react";
+
 export const Camper = ({ camper }) => {
   const {
     id,
@@ -22,6 +24,24 @@ export const Camper = ({ camper }) => {
     reviews,
     gallery,
   } = camper;
+  const [favorites, setFavorites] = useState(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
+
+  const isFavorite = favorites.includes(camper.id);
+
+  const handleClickFavorite = () => {
+    const updatedFavorites = [...favorites];
+    if (isFavorite) {
+      const index = updatedFavorites.indexOf(camper.id);
+      if (index > -1) updatedFavorites.splice(index, 1);
+    } else {
+      updatedFavorites.push(camper.id);
+    }
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   return (
     <div className={s.CamperContainer}>
@@ -33,9 +53,17 @@ export const Camper = ({ camper }) => {
           <p className={s.name}>{name}</p>
           <div className={s.price_hart}>
             <p className={s.price}>€{price}.00</p>
-            <svg className={s.icon_input}>
-              <use href="sprite.svg#icon-hart"></use>
-            </svg>
+            <button
+              onClick={handleClickFavorite}
+              className={s.hart_button}
+              type="button"
+            >
+              <svg
+                className={`${s.icon_input} ${isFavorite ? s.favorite : ""}`}
+              >
+                <use href="sprite.svg#icon-hart"></use>
+              </svg>
+            </button>
           </div>
         </div>
         <div className={s.second_string}>
@@ -54,14 +82,12 @@ export const Camper = ({ camper }) => {
         <p className={s.description}>{description}</p>
         <ul className={s.ul}>
           <li className={s.ul_li}>
-            {" "}
             <svg className={s.icon}>
               <use href="sprite.svg#icon-fuel-pump"></use>
             </svg>{" "}
             {engine}
           </li>
           <li className={s.ul_li}>
-            {" "}
             <svg className={s.icon}>
               <use href="sprite.svg#icon-diagram"></use>
             </svg>{" "}
@@ -69,7 +95,6 @@ export const Camper = ({ camper }) => {
           </li>
           {kitchen && (
             <li className={s.ul_li}>
-              {" "}
               <svg className={s.icon}>
                 <use href="sprite.svg#icon-cup-hot"></use>
               </svg>{" "}

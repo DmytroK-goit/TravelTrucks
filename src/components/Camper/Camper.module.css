@@ -135,3 +135,18 @@
   width: 24px;
   height: 25px;
 }
+.hart_button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.favorite {
+  stroke: #e44848;
+  transition: fill 0.3s ease;
+}
+
+.icon_input {
+  fill: grey;
+  transition: fill 0.3s ease;
+}
