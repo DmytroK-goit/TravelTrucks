@@ -37,13 +37,13 @@ export const CatalogId = () => {
           <h2>{name}</h2>
           <div className={s.second_string}>
             <svg className={s.icon_input}>
-              <use href="sprite.svg#icon-star"></use>
+              <use href="/public/sprite.svg#icon-star"></use>
             </svg>
             <p className={s.rating}>
               {rating} ({reviews.length} Reviews)
             </p>
             <svg className={s.icon_input}>
-              <use href="sprite.svg#icon-Map"></use>
+              <use href="/public/sprite.svg#icon-Map"></use>
             </svg>
             <p className={s.location}>{location}</p>
           </div>
