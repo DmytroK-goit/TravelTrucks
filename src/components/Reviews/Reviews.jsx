@@ -1,5 +1,5 @@
 import s from "./Reviews.module.css";
-
+import sprite from "../../img/sprite.svg";
 export const Reviews = ({ reviews }) => {
   return (
     <div className={s.info}>
@@ -17,8 +17,9 @@ export const Reviews = ({ reviews }) => {
                 <div className={s.stars}>
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className={s.star}>
+                      <use href={`${sprite}#icon-star`}></use>
                       <use
-                        href={`sprite.svg#${
+                        href={`${sprite}#${
                           i < review.reviewer_rating
                             ? "icon-star"
                             : "icon-grey_star"

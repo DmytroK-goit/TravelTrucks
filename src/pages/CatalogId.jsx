@@ -9,6 +9,7 @@ import { Features } from "../components/Features/Features";
 import { getCampersId } from "../../src/redux/Camper/operations";
 import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
 import { SendForm } from "../components/Form/SendForm";
+import sprite from "../img/sprite.svg";
 
 export const CatalogId = () => {
   const dispatch = useDispatch();
@@ -37,13 +38,13 @@ export const CatalogId = () => {
           <h2>{name}</h2>
           <div className={s.second_string}>
             <svg className={s.icon_input}>
-              <use href="/public/sprite.svg#icon-star"></use>
+              <use href={`${sprite}#icon-star`}></use>
             </svg>
             <p className={s.rating}>
               {rating} ({reviews.length} Reviews)
             </p>
             <svg className={s.icon_input}>
-              <use href="/public/sprite.svg#icon-Map"></use>
+              <use href={`${sprite}#icon-Map`}></use>
             </svg>
             <p className={s.location}>{location}</p>
           </div>
