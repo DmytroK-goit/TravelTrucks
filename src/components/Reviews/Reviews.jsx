@@ -18,7 +18,7 @@ export const Reviews = ({ reviews }) => {
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className={s.star}>
                       <use
-                        href={`../../../public/sprite.svg#${
+                        href={`sprite.svg#${
                           i < review.reviewer_rating
                             ? "icon-star"
                             : "icon-grey_star"
