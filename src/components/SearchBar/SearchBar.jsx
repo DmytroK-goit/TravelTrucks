@@ -1,8 +1,10 @@
 import { useState } from "react";
 import s from "./SearchBar.module.css";
 import sprite from "../../img/sprite.svg";
+import LoaderComponent from "../LoaderComponent/LoaderComponent";
 
 export const SearchBar = ({ onFilterChange }) => {
+  const [loading, setLoading] = useState(false);
   const [location, setLocation] = useState("");
   const [form, setForm] = useState("");
   const [equipment, setEquipment] = useState({
@@ -32,7 +34,7 @@ export const SearchBar = ({ onFilterChange }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const filters = {
       location: location || undefined,
       form: form || undefined,
@@ -47,19 +49,23 @@ export const SearchBar = ({ onFilterChange }) => {
       Object.entries(filters).filter(([_, value]) => value !== undefined)
     );
     onFilterChange(filteredParams);
-    setLocation("");
-    setForm("");
-    setEquipment({
-      AC: true,
-      transmission: "",
-      kitchen: false,
-      TV: false,
-      bathroom: false,
-    });
+    setTimeout(() => {
+      setLoading(false);
+      setLocation("");
+      setForm("");
+      setEquipment({
+        AC: true,
+        transmission: "",
+        kitchen: false,
+        TV: false,
+        bathroom: false,
+      });
+    }, 1000);
   };
 
   return (
     <form className={s.searchBar} onSubmit={handleSubmit}>
+      {loading && <LoaderComponent />}
       <div className={s.filter_location}>
         <label>Location</label>
         <div className={s.inputWrapper}>
@@ -74,7 +80,6 @@ export const SearchBar = ({ onFilterChange }) => {
           </svg>
         </div>
       </div>
-
       <div className={s.filter_vahicle}>
         <p className={s.filter_title}>Filters</p>
 
