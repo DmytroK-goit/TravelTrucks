@@ -146,7 +146,6 @@ export const Features = ({ item }) => {
           </ul>
         </div>
       </div>
-      <SendForm />
     </div>
   );
 };

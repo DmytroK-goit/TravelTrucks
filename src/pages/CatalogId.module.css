@@ -1,9 +1,17 @@
 .catalog_id {
   width: 1312px;
 }
+.catalog_id h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #101828;
+}
 .list_photo {
   display: flex;
   gap: 48px;
+  margin-top: 28px;
+  margin-bottom: 28px;
 }
 .list_photo li {
   list-style: none;
@@ -18,15 +26,21 @@
 .tabs button {
   border: none;
   background-color: inherit;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
 }
 .tabs button:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: red;
   font-weight: 700;
+  stroke-width: 5px;
 }
 .catalog_cont {
   padding: 48px 64px 80px 64px;
+  display: flex;
 }
 .second_string {
   padding: 8px;
@@ -34,6 +48,12 @@
   gap: 16px;
   justify-content: start;
   align-items: center;
+}
+.second_string p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
 }
 .icon {
   fill: #101828;
@@ -44,4 +64,27 @@
   width: 16px;
   height: 16px;
   fill: #101828;
+}
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #101828;
+  margin-top: 16px;
+}
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #475467;
+}
+
+.content_wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 56px;
+}
+.tabs {
+  margin-top: 60px;
 }

@@ -8,40 +8,23 @@ import { Reviews } from "../components/Reviews/Reviews";
 import { Features } from "../components/Features/Features";
 import { getCampersId } from "../../src/redux/Camper/operations";
 import LoaderComponent from "../components/LoaderComponent/LoaderComponent";
+import { SendForm } from "../components/Form/SendForm";
 
 export const CatalogId = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log(id);
   useEffect(() => {
     dispatch(getCampersId(id));
   }, [dispatch, id]);
+
   const [activeTab, setActiveTab] = useState("features");
   const item = useSelector(campersSelectors.selectCamperId);
+
   if (!item) {
     return <LoaderComponent />;
   }
 
-  const {
-    name,
-    price,
-    rating,
-    location,
-    description,
-    transmission,
-    engine,
-    AC,
-    bathroom,
-    kitchen,
-    TV,
-    radio,
-    refrigerator,
-    microwave,
-    gas,
-    water,
-    reviews,
-    gallery,
-  } = item;
+  const { name, price, rating, location, description, reviews, gallery } = item;
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -54,17 +37,17 @@ export const CatalogId = () => {
           <h2>{name}</h2>
           <div className={s.second_string}>
             <svg className={s.icon_input}>
-              <use href="../../../public/sprite.svg#icon-star"></use>
+              <use href="/sprite.svg#icon-star"></use>
             </svg>
             <p className={s.rating}>
               {rating} ({reviews.length} Reviews)
             </p>
             <svg className={s.icon_input}>
-              <use href="../../../public/sprite.svg#icon-Map"></use>
+              <use href="/sprite.svg#icon-Map"></use>
             </svg>
             <p className={s.location}>{location}</p>
           </div>
-          <p>€{price}.00</p>
+          <p className={s.price}>€{price}.00</p>
           <ul className={s.list_photo}>
             {gallery.map((photo, index) => (
               <li className={s.img} key={index}>
@@ -72,7 +55,7 @@ export const CatalogId = () => {
               </li>
             ))}
           </ul>
-          <p>{description}</p>
+          <p className={s.description}>{description}</p>
 
           <div className={s.tabs}>
             <button
@@ -89,11 +72,16 @@ export const CatalogId = () => {
             </button>
           </div>
 
-          {activeTab === "reviews" ? (
-            <Reviews reviews={reviews} />
-          ) : (
-            <Features item={item} />
-          )}
+          <div className={s.content_wrapper}>
+            <div className={s.content}>
+              {activeTab === "reviews" ? (
+                <Reviews reviews={reviews} />
+              ) : (
+                <Features item={item} />
+              )}
+            </div>
+            <SendForm />
+          </div>
         </div>
       </div>
     </div>
