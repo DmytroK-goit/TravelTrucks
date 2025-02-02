@@ -4,7 +4,7 @@
 }
 .information {
   border-radius: 10px;
-  padding: 44px 80px;
+  padding: 44px 52px;
   width: 631px;
   height: 588px;
   background-color: #f7f7f7;
@@ -41,6 +41,7 @@
 .vahicle_det {
   display: flex;
   flex-direction: column;
+  width: 527px;
 }
 .vahicle_det ul {
   list-style: none;
@@ -48,4 +49,12 @@
 .vahicle_det li {
   display: flex;
   justify-content: space-between;
+  margin-top: 16px;
+}
+.vahicle_parag {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #101828;
 }

@@ -118,6 +118,9 @@ export const Features = ({ item }) => {
 
         <div className={s.vahicle_det}>
           <p>Vehicle details</p>
+          <svg className={s.icon}>
+            <use href="/public/sprite.svg#icon-Divider"></use>
+          </svg>
           <ul>
             <li>
               <p>Form</p>
