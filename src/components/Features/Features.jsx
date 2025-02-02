@@ -1,5 +1,6 @@
 import { SendForm } from "../Form/SendForm";
 import s from "./Features.module.css";
+import sprite from "../../img/sprite.svg";
 
 export const Features = ({ item }) => {
   const {
@@ -52,7 +53,7 @@ export const Features = ({ item }) => {
             <li className={s.ul_li}>
               {" "}
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-cup-hot"></use>
+                <use href={`${sprite}#icon-cup-hot`}></use>
               </svg>{" "}
               Kitchen
             </li>
@@ -85,7 +86,7 @@ export const Features = ({ item }) => {
           {water && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-water-outline"></use>
+                <use href={`${sprite}#icon-water-outline`}></use>
               </svg>{" "}
               Water
             </li>
@@ -93,7 +94,7 @@ export const Features = ({ item }) => {
           {refrigerator && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-solar_fridge-outline"></use>
+                <use href={`${sprite}#icon-solar_fridge-outline`}></use>
               </svg>{" "}
               Refrigerator
             </li>
@@ -101,7 +102,7 @@ export const Features = ({ item }) => {
           {microwave && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-microwave"></use>
+                <use href={`${sprite}#icon-microwave`}></use>
               </svg>{" "}
               Microwave
             </li>
@@ -117,7 +118,7 @@ export const Features = ({ item }) => {
           {radio && (
             <li className={s.ul_li}>
               <svg className={s.icon}>
-                <use href="/public/sprite.svg#icon-radios"></use>
+                <use href={`${sprite}#icon-radios`}></use>
               </svg>{" "}
               Radio
             </li>
