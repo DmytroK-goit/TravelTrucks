@@ -23,3 +23,6 @@
   margin-top: 40px;
   margin-bottom: 52px;
 }
+.loadMoreBtn:hover {
+  border: 1px solid #d84343;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import s from "./SearchBar.module.css";
+import sprite from "../../img/sprite.svg";
 
 export const SearchBar = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
@@ -158,7 +159,7 @@ export const SearchBar = ({ onFilterChange }) => {
             >
               {" "}
               <svg className={s.icon}>
-                <use href="sprite.svg#icon-bi_grid-1x2"></use>
+                <use href={`${sprite}#icon-bi_grid-1x2`}></use>
               </svg>{" "}
               Van
             </button>
@@ -168,7 +169,7 @@ export const SearchBar = ({ onFilterChange }) => {
             >
               {" "}
               <svg className={s.icon}>
-                <use href="sprite.svg#icon-bi_grid"></use>
+                <use href={`${sprite}#icon-bi_grid`}></use>
               </svg>{" "}
               Fully Integrated
             </button>
@@ -178,7 +179,7 @@ export const SearchBar = ({ onFilterChange }) => {
             >
               {" "}
               <svg width="32" height="32" className={s.icon}>
-                <use href="sprite.svg#icon-bi_grid-3x3-gap"></use>
+                <use href={`${sprite}#icon-bi_grid-3x3-gap`}></use>
               </svg>{" "}
               Alcove
             </button>

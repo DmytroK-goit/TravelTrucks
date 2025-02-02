@@ -76,6 +76,7 @@
   justify-content: center;
   align-items: center;
   gap: 4px;
+  box-sizing: border-box;
 }
 
 .vehicleTypeButtons button.active,
