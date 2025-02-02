@@ -7,7 +7,7 @@ export const SearchBar = ({ onFilterChange }) => {
   const [form, setForm] = useState("");
   const [equipment, setEquipment] = useState({
     AC: true,
-    transmission: "automatic",
+    transmission: "",
     kitchen: false,
     TV: false,
     bathroom: false,
@@ -25,7 +25,8 @@ export const SearchBar = ({ onFilterChange }) => {
     });
   };
 
-  const handleVehicleTypeClick = (type) => {
+  const handleVehicleTypeClick = (type, e) => {
+    e.preventDefault();
     setForm(type);
   };
 
@@ -36,10 +37,7 @@ export const SearchBar = ({ onFilterChange }) => {
       location: location || undefined,
       form: form || undefined,
       AC: equipment.AC || undefined,
-      transmission:
-        equipment.transmission !== "automatic"
-          ? equipment.transmission
-          : undefined,
+      transmission: equipment.transmission ? equipment.transmission : undefined,
       kitchen: equipment.kitchen || undefined,
       TV: equipment.TV || undefined,
       bathroom: equipment.bathroom || undefined,
@@ -48,8 +46,16 @@ export const SearchBar = ({ onFilterChange }) => {
     const filteredParams = Object.fromEntries(
       Object.entries(filters).filter(([_, value]) => value !== undefined)
     );
-
     onFilterChange(filteredParams);
+    setLocation("");
+    setForm("");
+    setEquipment({
+      AC: true,
+      transmission: "",
+      kitchen: false,
+      TV: false,
+      bathroom: false,
+    });
   };
 
   return (
@@ -155,7 +161,7 @@ export const SearchBar = ({ onFilterChange }) => {
           <div className={s.vehicleTypeButtons}>
             <button
               className={form === "panelTruck" ? s.active : ""}
-              onClick={() => handleVehicleTypeClick("panelTruck")}
+              onClick={(e) => handleVehicleTypeClick("panelTruck", e)}
             >
               {" "}
               <svg className={s.icon}>
@@ -165,7 +171,7 @@ export const SearchBar = ({ onFilterChange }) => {
             </button>
             <button
               className={form === "fullyIntegrated" ? s.active : ""}
-              onClick={() => handleVehicleTypeClick("fullyIntegrated")}
+              onClick={(e) => handleVehicleTypeClick("fullyIntegrated", e)}
             >
               {" "}
               <svg className={s.icon}>
@@ -175,7 +181,7 @@ export const SearchBar = ({ onFilterChange }) => {
             </button>
             <button
               className={form === "alcove" ? s.active : ""}
-              onClick={() => handleVehicleTypeClick("alcove")}
+              onClick={(e) => handleVehicleTypeClick("alcove", e)}
             >
               {" "}
               <svg width="32" height="32" className={s.icon}>

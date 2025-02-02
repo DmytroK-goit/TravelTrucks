@@ -11,6 +11,7 @@ export const getCampers = createAsyncThunk(
   async (filters, thunkApi) => {
     try {
       const response = await campers.get("/campers", { params: filters });
+      toast.success(`Found ${response.data.total} campers`);
       return response.data;
     } catch (error) {
       if (error.response && error.response.status === 404) {
