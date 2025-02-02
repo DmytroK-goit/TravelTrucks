@@ -37,6 +37,8 @@
   text-decoration-color: red;
   font-weight: 700;
   stroke-width: 5px;
+  text-underline-offset: 24px;
+  text-decoration-thickness: 5px;
 }
 .catalog_cont {
   padding: 48px 64px 80px 64px;
@@ -87,4 +89,6 @@
 }
 .tabs {
   margin-top: 60px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dadde1;
 }

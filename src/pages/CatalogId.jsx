@@ -80,9 +80,7 @@ export const CatalogId = () => {
                 <Features item={item} />
               )}
             </div>
-            {/* <svg>
-              <use href="/public/sprite.svg#icon-Vector-1"></use>
-            </svg> */}
+
             <SendForm />
           </div>
         </div>

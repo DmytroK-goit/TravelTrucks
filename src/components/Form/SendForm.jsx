@@ -84,7 +84,7 @@ export const SendForm = () => {
 
                 <label>
                   <DatePicker
-                    className={s.input}
+                    className={`${s.input} ${s.datePicker}`}
                     selectsRange
                     startDate={startDate}
                     endDate={endDate}
@@ -92,7 +92,7 @@ export const SendForm = () => {
                       setDateRange(update);
                       setFieldValue("dateRange", update);
                     }}
-                    placeholderText="Select Booking Date Range*"
+                    placeholderText="Booking date*"
                     dateFormat="dd/MM/yyyy"
                   />
                   <ErrorMessage
